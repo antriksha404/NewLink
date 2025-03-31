@@ -1,0 +1,39 @@
+{
+	"name": "@newput-newlink/audit",
+	"version": "1.1.1",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build:dev": "nest build && npm link",
+		"build": "nest build"
+	},
+	"dependencies": {
+		"argon2": "^0.41.1",
+		"bcrypt": "^5.1.1",
+		"helmet": "^8.0.0",
+		"jsonwebtoken": "^9.0.2",
+		"typeorm": "^0.3.20",
+		"@newput-newlink/database": "^1.0.0"
+	},
+	"peerDependencies": {
+		"@nestjs/common": "^11.0.0",
+		"@nestjs/config": "^4.0.0",
+		"@nestjs/core": "^11.0.0",
+		"@nestjs/swagger": "^11.0.0",
+		"class-transformer": "^0.5.1",
+		"class-validator": "^0.14.1"
+	},
+	"devDependencies": {
+		"ts-loader": "^9.4.3",
+		"ts-node": "^10.9.1",
+		"tsconfig-paths": "^4.2.0",
+		"typescript": "^5.7.3"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"gitHead": "c60625a55628d9f15eff2cd42aac5e688f580867"
+}
