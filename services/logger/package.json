@@ -1,12 +1,11 @@
 {
 	"name": "@newput-newlink/logger",
-	"version": "1.0.2",
+	"version": "1.0.1",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
 		"dist"
 	],
-	"license": "UNLICENSED",
 	"scripts": {
 		"build:dev": "nest build && npm link",
 		"build": "nest build"
@@ -56,6 +55,9 @@
 		"ts-node": "^10.9.1",
 		"tsconfig-paths": "^4.2.0",
 		"typescript": "^5.7.3"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"gitHead": "c60625a55628d9f15eff2cd42aac5e688f580867"
 }

@@ -23,6 +23,9 @@ export class PostgresModule {
 				synchronize: config.synchronize,
 				logging: config.logging,
 				autoLoadEntities: config.autoLoadEntities,
+				ssl: {
+					rejectUnauthorized: false,
+				},
 			}),
 		];
 
