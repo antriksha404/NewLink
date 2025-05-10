@@ -26,6 +26,7 @@ module.exports = {
 
 	scopes: [
 		{ name: 'newlink' },
+    { name: 'audit-service' },
 		{ name: 'authentication-service' },
 		{ name: 'authorization-service' },
 		{ name: 'notification-service' },

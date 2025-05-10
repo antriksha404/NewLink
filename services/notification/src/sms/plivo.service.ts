@@ -21,10 +21,6 @@ export class PlivoService {
 			language: 'en_US',
 			components: [
 				{
-					type: 'header',
-					parameters: [],
-				},
-				{
 					type: 'body',
 					parameters: [
 						{
