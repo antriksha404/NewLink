@@ -11,6 +11,8 @@
 		"build": "nest build"
 	},
 	"dependencies": {
+		"@nestjs/cli": "^11.0.7",
+		"@nestjs/swagger": "^11.2.0",
 		"nodemailer": "^6.9.16",
 		"plivo": "^4.69.2"
 	},

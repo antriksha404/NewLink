@@ -1,10 +1,10 @@
-import { EmailDto } from 'dto/email.dto';
+import { EmailDTO } from './email.dto';
 import { SmsDto } from 'dto/sms.dto';
 
 export const DefaultDTO = [
     {
         provide: 'EMAIL_DTO',
-        useValue: EmailDto
+        useValue: EmailDTO
     },
     {
         provide: 'SMS_DTO',

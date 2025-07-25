@@ -6,9 +6,9 @@ import * as nodemailer from 'nodemailer';
 import * as plivo from 'plivo';
 
 import { NotificationController } from 'controllers/notification.controller';
-import { EmailService } from 'email/email.service';
+import { EmailService } from './services/email.service';
 import { NotificationModuleOptions } from 'notification.type';
-import { PlivoService } from 'sms/plivo.service';
+import { PlivoService } from './services/plivo.service';
 
 import { DefaultDTO } from 'dto';
 
@@ -28,6 +28,8 @@ export class NotificationModule {
 			authId: configService.get('PLIVO_AUTH_ID', ''),
 			authToken: configService.get('PLIVO_AUTH_TOKEN', ''),
 			from: configService.get('PLIVO_FROM_NUMBER', ''),
+			whatsappFrom: configService.get('PLIVO_WHATSAPP_FROM_NUMBER', ''),
+			whatsappTemplate: configService.get('PLIVO_WHATSAPP_TEMPLATE', ''),
 		};
 
 		if (options.email.host && (!options.email.user || !options.email.pass)) {
@@ -40,9 +42,9 @@ export class NotificationModule {
 
 		options.dto = options.dto
 			? DefaultDTO.map((defaultDto) => {
-					const customDto = options.dto?.find((dto) => dto.provide === defaultDto.provide) || defaultDto;
-					return { provide: customDto.provide, useValue: customDto.useValue };
-				})
+				const customDto = options.dto?.find((dto) => dto.provide === defaultDto.provide) || defaultDto;
+				return { provide: customDto.provide, useValue: customDto.useValue };
+			})
 			: DefaultDTO;
 
 		return options;
@@ -105,13 +107,17 @@ export class NotificationModule {
 				provide: 'PLIVO_FROM_NUMBER',
 				useValue: options.sms.from,
 			});
-      providers.push({
+			providers.push({
 				provide: 'PLIVO_WHATSAPP_FROM_NUMBER',
 				useValue: options.sms.whatsappFrom,
 			});
-      providers.push({
+			providers.push({
 				provide: 'PLIVO_WHATSAPP_TEMPLATE',
 				useValue: options.sms.whatsappTemplate,
+			});
+			providers.push({
+				provide: 'PLIVO_FROM_WHATSAPP_NUMBER',
+				useValue: options.sms.whatsappFrom,
 			});
 			providers.push(PlivoService);
 			exports.push(PlivoService);

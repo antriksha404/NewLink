@@ -1,6 +1,6 @@
 import { Body, Controller, Inject, Post } from '@nestjs/common';
-import { EmailService } from '../email/email.service';
-import { PlivoService } from '../sms/plivo.service';
+import { EmailService } from '../services/email.service';
+import { PlivoService } from '../services/plivo.service';
 
 @Controller('notifications')
 export class NotificationController {
@@ -27,8 +27,8 @@ export class NotificationController {
 
   @Post('whatsapp')
 	async sendViaWhatsapp(@Body() sms: InstanceType<typeof this.SmsDTO>): Promise<{ message: string }> {
-		const { dst, text } = sms as typeof this.SmsDTO;
-		await this.plivoService.sendWhatsApp(dst, text);
+		const { to, message } = sms as typeof this.SmsDTO;
+		await this.plivoService.sendWhatsapp(to, message);
 		return { message: 'WhatsApp SMS sent successfully!' };
 	}
 }
