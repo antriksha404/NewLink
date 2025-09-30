@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
-import { AppModule } from '@/app.module';
+import { AppModule } from '@/modules/app.module';
 
 process.on('unhandledRejection', (reason, promise) => {
   console.info('Unhandled Rejection at:', promise, 'reason:', reason);
