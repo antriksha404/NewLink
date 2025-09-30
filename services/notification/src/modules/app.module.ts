@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
-import { AppController } from '@/app.controller';
+import { AppController } from '@/controllers/app.controller';
 import { EmailModule } from '@/modules/email.module';
 import { PlivoModule } from '@/modules/plivo.module';
 
