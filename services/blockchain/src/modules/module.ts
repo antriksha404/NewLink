@@ -5,7 +5,7 @@ import { ConfigModule, ConfigService } from "@nestjs/config";
 import { HederaService } from "hedera/services/hedera.service";
 import { HederaController } from "hedera/controllers/hedera.controller";
 import { BlockchainOptionsType } from "blockchain.type";
-import { DefaultDTO } from "./dto";
+import { DefaultDTO } from "../dto";
 
 function resolveConfigFromEnv(configService: ConfigService): BlockchainOptionsType {
   const options: BlockchainOptionsType = {
@@ -61,4 +61,3 @@ function resolveConfigFromEnv(configService: ConfigService): BlockchainOptionsTy
   ],
 })
 export class BlockchainModule {}
-
