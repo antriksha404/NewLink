@@ -3,10 +3,11 @@ import {
   Controller,
   Delete,
   Get,
-  Headers,
-  Put,
-  UnauthorizedException,
+  Patch,
+  Request,
+  UseGuards,
 } from '@nestjs/common';
+import { JwtAuthGuard } from '../guards/jwt-auth.guard';
 import { UserService } from '../services/user.service';
 import { UpdateUserDTO } from '../types/user.dto';
 
@@ -15,32 +16,23 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get('me')
-  async getCurrentUser(@Headers('authorization') auth: string) {
-    if (!auth) {
-      throw new UnauthorizedException('No token provided');
-    }
-    const token = auth.replace('Bearer ', '');
-    return this.userService.findUserByToken(token);
+  @UseGuards(JwtAuthGuard)
+  async getCurrentUser(@Request() req) {
+    return this.userService.findUserById(req.user.id);
   }
 
-  @Put('me')
+  @Patch('me')
+  @UseGuards(JwtAuthGuard)
   async updateCurrentUser(
-    @Headers('authorization') auth: string,
+    @Request() req,
     @Body() updateUserDto: UpdateUserDTO,
   ) {
-    if (!auth) {
-      throw new UnauthorizedException('No token provided');
-    }
-    const token = auth.replace('Bearer ', '');
-    return this.userService.updateUserByToken(token, updateUserDto);
+    return this.userService.updateUser(req.user.id, updateUserDto);
   }
 
   @Delete('me')
-  async deleteCurrentUser(@Headers('authorization') auth: string) {
-    if (!auth) {
-      throw new UnauthorizedException('No token provided');
-    }
-    const token = auth.replace('Bearer ', '');
-    return this.userService.deleteUserByToken(token);
+  @UseGuards(JwtAuthGuard)
+  async deleteCurrentUser(@Request() req) {
+    return this.userService.deleteUser(req.user.id);
   }
 }

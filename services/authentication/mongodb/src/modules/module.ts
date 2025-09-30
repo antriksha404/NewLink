@@ -10,6 +10,7 @@ import { User, UserSchema } from '../schemas/user.schema';
 import { UserService } from '../services/user.service';
 import { JwtStrategy } from '../strategies/jwt.strategy';
 import { AuthenticationModule } from './authentication.module';
+import { UserModule } from './user.module';
 
 @Module({
   imports: [
@@ -58,6 +59,7 @@ import { AuthenticationModule } from './authentication.module';
       },
     }),
     AuthenticationModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [UserRepository, UserService, JwtStrategy],
