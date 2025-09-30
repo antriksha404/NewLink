@@ -76,6 +76,7 @@ export class BlockchainModule {
     ];
     const controllers = [];
 
+<<<<<<< HEAD:services/blockchain/src/module.ts
     switch (options.blockchain) {
       case 'hedera':
         providers.push(HederaService);
@@ -97,3 +98,25 @@ export class BlockchainModule {
     };
   }
 }
+=======
+    {
+      provide: APP_PIPE,
+      useFactory: () =>
+        new ValidationPipe({
+          whitelist: true,
+          transform: true,
+          forbidNonWhitelisted: true,
+          transformOptions: { enableImplicitConversion: true },
+        }),
+    },
+
+    ...DefaultDTO,
+    HederaService,
+  ],
+  exports: [
+    'BLOCKCHAIN_CONFIG',
+    HederaService,
+  ],
+})
+export class BlockchainModule {}
+>>>>>>> a95c05a (package updated (#23)):services/blockchain/src/modules/module.ts
