@@ -12,7 +12,7 @@
     "baseUrl": "./",
     "paths": {
       "hedera/*": ["src/hedera/*"],
-      "blockchain.type": ["src/blockchain.type.ts"],
+      "blockchain.type": ["./src/types/blockchain.type.ts"],
       "dto": ["src/dto/index.ts"]
     },
     "incremental": true,
