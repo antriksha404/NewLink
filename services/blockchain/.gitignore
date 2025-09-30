@@ -1,0 +1,12 @@
+# Node.js modules folder
+node_modules/
+
+# Environment variables
+.env
+
+# Optional: log files
+*.log
+
+# Optional: build outputs (if using dist or out folders)
+dist/
+out/
