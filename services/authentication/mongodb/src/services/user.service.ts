@@ -14,8 +14,24 @@ export class UserService {
     private readonly jwtService: JwtService,
   ) {}
 
+  private excludePassword(user: any) {
+    if (!user) return null;
+    const { password, ...userWithoutPassword } = user.toObject
+      ? user.toObject()
+      : user;
+    return userWithoutPassword;
+  }
+
   async findUser(id: string) {
     return this.userRepository.findById(id);
+  }
+
+  async findUserById(id: string) {
+    const user = await this.userRepository.findById(id);
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+    return this.excludePassword(user);
   }
 
   async findUserByHandler(handler: string) {
@@ -37,6 +53,18 @@ export class UserService {
     }
   }
 
+  async updateUser(id: string, updateUserDto: UpdateUserDTO) {
+    const user = await this.userRepository.findById(id);
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+    const updatedUser = await this.userRepository.findByIdAndUpdate(
+      id,
+      updateUserDto,
+    );
+    return this.excludePassword(updatedUser);
+  }
+
   async updateUserByToken(token: string, updateUserDto: UpdateUserDTO) {
     const user = await this.findUserByToken(token);
     const updatedUser = await this.userRepository.findByIdAndUpdate(
@@ -44,6 +72,18 @@ export class UserService {
       updateUserDto,
     );
     return updatedUser;
+  }
+
+  async deleteUser(id: string) {
+    const user = await this.userRepository.findById(id);
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+    const deletedUser = await this.userRepository.findByIdAndUpdate(id, {
+      isDeleted: true,
+      deletedAt: new Date(),
+    });
+    return this.excludePassword(deletedUser);
   }
 
   async deleteUserByToken(token: string) {

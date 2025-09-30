@@ -22,7 +22,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   // prettier-ignore
   validate(payload) {
     return {
-      id: payload.id,
+      id: payload.sub || payload.id,
     };
   }
 }
