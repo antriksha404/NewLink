@@ -114,16 +114,10 @@ Once NewLink is running, you can scaffold a new microservice using the CLI:
 
 ```
 NewLink/
-├── packages/
-│   ├── auth/              # Authentication module
+├── services/
+│   ├── authentication/              # Authentication module
 │   ├── blockchain/        # Blockchain integration
-│   ├── notification/      # Notification service
-│   ├── core/              # Shared utilities and types
-│   └── cli/               # NewLink CLI tool
-├── apps/
-│   └── api/               # API gateway
-├── docs/                  # Documentation
-├── lerna.json             # Lerna monorepo config
+│   └── notification/      # Notification service
 ├── package.json           # Root dependencies
 ├── .nvmrc                 # Node version
 └── README.md              # You are here
@@ -156,12 +150,6 @@ Standardized microservices across your organization. Consistent patterns, shared
 Rapid prototyping with production-ready foundations. Go from concept to deployment in record time.
 
 
-### Coming Soon: AI Integration
-- Intelligent monitoring and alerting
-- Predictive scaling based on traffic patterns
-- Anomaly detection and auto-remediation
-- Self-adapting systems that learn over time
-
 ### Enhanced Blockchain Features
 - Deeper smart contract integrations
 - Token-based access control
@@ -172,8 +160,6 @@ Rapid prototyping with production-ready foundations. Go from concept to deployme
 
 For detailed guides and API references:
 
-- [Architecture Overview](./docs/architecture.md)
-- [API Documentation](./docs/api-reference.md)
 - [Service Modules](./docs/modules.md)
 - [Deployment Guide](./docs/deployment.md)
 - [Best Practices](./docs/best-practices.md)
