@@ -122,7 +122,7 @@ Once NewLink is running, you can scaffold a new microservice using the CLI:
 ```
 NewLink/
 ├── services/
-│   ├── authentication/              # Authentication module
+│   ├── authentication/    # Authentication module
 │   ├── blockchain/        # Blockchain integration
 │   └── notification/      # Notification service
 ├── package.json           # Root dependencies
