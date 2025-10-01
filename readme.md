@@ -1,115 +1,222 @@
-# Newlink - Simplifying Development with Essential Features
+# NewLink
 
-Newlink is a robust npm package designed to streamline the development process by providing essential functionalities out-of-the-box. Developers can use Newlink to build both monolithic and microservices architectures without worrying about foundational aspects like authentication and authorization. With its CLI, getting started with Newlink is quick and effortless.
+**Stop reinventing the wheel. Start building what matters.**
 
----
+NewLink is a scalable, modular backend framework built for modern microservices. Get authentication, notifications, blockchain integration, and more — all production-ready from day one.
 
-## Features
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
 
-Newlink provides the following core features to accelerate development:
+## Why NewLink?
 
-1. **Authentication**  
-   Pre-built authentication functionalities to manage user access securely and efficiently.
+In today's fast-paced development world, teams waste valuable weeks setting up the same repetitive plumbing: authentication, logging, notifications, multi-tenant support. **NewLink eliminates that bottleneck.**
 
-2. **Authorization**  
-   Flexible role-based access control to define and enforce user permissions.
+Whether you're a startup racing to launch an MVP or an enterprise standardizing infrastructure across teams, NewLink provides the foundation to go from idea to deployment fast — without sacrificing clean architecture.
 
-3. **Cache**  
-   High-performance caching capabilities to optimize application speed and reduce load times.
+## Core Features
 
-4. **Rate Limiter**  
-   Built-in rate limiting to protect your application from abuse and ensure fair usage.
+### Out-of-the-Box Services
 
-5. **Blockchain**  
-   Blockchain integration support for building decentralized features with ease.
+- **Authentication & RBAC** - Secure login, JWT support, and fine-grained role-based access control
+- **Notification Service** - Unified interface for email, SMS, and async messaging
+- **Blockchain Integration** - Wallet verification, transaction logging, and Web3 primitives
+- **Multi-Tenant Architecture** - Native tenant awareness and data isolation for SaaS platforms
+- **Centralized Logging** - Structured logging across distributed services
+- **Security & Rate Limiting** - Built-in API protection with smart throttling
 
-6. **Notification**  
-   Powerful notification service to enhance user engagement across multiple channels.
+### Built on a Future-Ready Stack
 
-## Modules
+- **NestJS** - Modular, testable microservices
+- **Lerna** - Monorepo management and package modularity
+- **TypeScript** - Type-safe development
+- **Clean Architecture** - Separation of concerns built-in
+- **Docker Ready** - Seamless CI/CD integration
+- **Custom CLI** - Rapid scaffolding with consistent conventions
 
-| Module             | Description                      | Package Name                     |
-| ------------------ | -------------------------------- | -------------------------------- |
-| **CLI**            | Command-line interface for setup | `@newput-newlink/cli`            |
-| **Authentication** | User authentication system       | `@newput-newlink/authentication` |
-| **Authorization**  | Role-based access control        | `@newput-newlink/authorization`  |
-| **Cache**          | Application caching              | `@newput-newlink/cache`          |
-| **Rate Limiter**   | Request rate limiting            | `@newput-newlink/ratelimiter`    |
-| **Blockchain**     | Blockchain integration           | `@newput-newlink/blockchain`     |
-| **Notification**   | User notifications               | `@newput-newlink/notification`   |
-
----
-
-## Future Implementation
-
-Newlink is continually evolving, with exciting features planned for future releases to further enhance developer productivity and enable advanced capabilities:
-
-1. **AI Integration**  
-   Incorporate artificial intelligence features such as machine learning models, natural language processing, and AI-driven recommendations.
-
-2. **BPMN (Business Process Model and Notation)**  
-   Support for designing and automating business workflows with BPMN-compliant tools and APIs.
-
-3. **DMN (Decision Model and Notation)**  
-   Add decision modeling features for creating and executing decision tables and rules.
-
-4. **Messaging**  
-   Enable asynchronous messaging and communication features for inter-service communication and event-driven architectures.
-
-5. **Blog Module**  
-   Provide a blog management module for creating, editing, and publishing blog content seamlessly.
-
-6. **Questionnaire Module**  
-   Introduce a dynamic questionnaire builder for surveys, quizzes, and user feedback collection.
-
-7. **Analytics**  
-   Advanced analytics tools for monitoring application performance, user behavior, and generating actionable insights.
-
-8. **File Storage**  
-   Built-in file storage management for handling uploads, downloads, and secure file sharing.
-
-9. **Search Engine**  
-   Full-text search capabilities to enhance data accessibility and user experience.
-
-These future implementations aim to make Newlink a comprehensive and indispensable tool for developers across a wide range of applications and industries.
-
-## Getting Started
-
-Newlink is a monorepo managed with [Lerna](https://lerna.js.org/), making it modular and scalable for diverse project requirements.
+## Quick Start
 
 ### Prerequisites
 
-Ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v20 or later)
-- npm (v8 or later)
-
----
+- Node.js (version managed via `.nvmrc`)
+- npm or yarn
+- nvm (Node Version Manager)
 
 ### Installation
 
-Use the Newlink CLI to quickly initialize your project:
+1. **Clone the repository**
 
-```bash
-npx @newput-newlink/cli
-cd my-project
+   ```bash
+   git clone https://github.com/antriksha404/NewLink.git
+   cd NewLink
+   ```
+
+2. **Use the correct Node version**
+
+   ```bash
+   nvm use
+   ```
+
+   This automatically loads the Node version specified in `.nvmrc`
+
+3. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run start
+   ```
+
+### Creating Your First Microservice
+
+Once NewLink is running, you can scaffold a new microservice using the CLI:
+
+1. **Navigate to your project directory**
+
+   ```bash
+   cd /path/to/your/projects
+   ```
+
+2. **Run the NewLink CLI**
+
+   ```bash
+   ccube-newlink
+   ```
+
+3. **Answer the interactive prompts**
+
+   The CLI will guide you through project setup:
+
+   ```
+   ? Project name: my-awesome-service
+   ? Description: A microservice for handling user operations
+   ? Select services to include: (Use arrow keys and space to select)
+
+   ◯ Authentication - User auth, JWT, and RBAC
+   ◯ Blockchain - Wallet integration and Web3 features
+   ◯ Notification - Email, SMS, and messaging
+   ```
+
+   **Available Services:**
+
+   - **Authentication** - Complete auth system with JWT, user management, and role-based access control
+   - **Blockchain** - Web3 integration, wallet verification, and transaction logging
+   - **Notification** - Multi-channel notification system (email, SMS, push)
+
+4. **Start building!**
+
+   Your new microservice is ready with:
+
+   - Pre-configured project structure
+   - Selected service modules integrated
+   - Development and production configs
+   - Docker setup
+   - Testing framework
+   - API documentation
+
+## Project Structure
+
+```
+NewLink/
+├── services/
+│   ├── auth/              # Authentication module
+│   ├── blockchain/        # Blockchain integration
+│   ├── notification/      # Notification service
+│   └── cli/               # NewLink CLI tool
+├── apps/
+│   └── api/               # API gateway
+├── docs/                  # Documentation
+├── package.json           # Root dependencies
+├── .nvmrc                 # Node version
+└── README.md              # You are here
 ```
 
-#### Installation Process
+```
 
-During installation, the CLI will guide you through two key configuration steps:
+## Who Should Use NewLink?
 
--> Architecture Selection: Choose between Monolithic or Microservice architecture based on your project requirements.
--> Service Setup: You'll be prompted to enable the various services. Enter 'Y' to include this feature in your installation.
+NewLink is built for teams that value speed without sacrificing quality:
 
-The CLI tool handles all dependency installation and initial setup automatically, creating a production-ready service configured to your specifications.
-What Happens Next?
-After completing these steps, the NewLink CLI will:
+- **Startups** - Bootstrap MVPs and internal tools in days, not weeks
+- **Enterprises** - Standardize backend architecture across multiple teams
+- **Engineering Managers** - Onboard developers faster with consistent foundations
+- **Solution Architects** - Reduce technical debt and fragmentation
 
-Install all required dependencies
-Generate necessary configuration files
-Set up your chosen architecture
-Configure the services
-Initialize your project with the selected settings
+If you've ever spent weeks rebuilding the same authentication system or notification service, NewLink was made for you.
 
-Now your NewLink service is ready for development and deployment.
+## Use Cases
+
+### SaaS Platforms
+Multi-tenant architecture built-in. Launch faster with tenant isolation and centralized management.
+
+### Web3 Applications
+Blockchain integration ready. Build decentralized apps without wrestling with low-level complexity.
+
+### Enterprise APIs
+Standardized microservices across your organization. Consistent patterns, shared services, faster delivery.
+
+### Internal Tools
+Rapid prototyping with production-ready foundations. Go from concept to deployment in record time.
+
+## Roadmap
+
+### Coming Soon: AI Integration
+- Intelligent monitoring and alerting
+- Predictive scaling based on traffic patterns
+- Anomaly detection and auto-remediation
+- Self-adapting systems that learn over time
+
+### Enhanced Blockchain Features
+- Deeper smart contract integrations
+- Token-based access control
+- Advanced Web3-ready APIs
+- Decentralized identity management
+
+## Documentation
+
+For detailed guides and API references:
+
+- [Architecture Overview](./docs/architecture.md)
+- [API Documentation](./docs/api-reference.md)
+- [Service Modules](./docs/modules.md)
+- [Deployment Guide](./docs/deployment.md)
+- [Best Practices](./docs/best-practices.md)
+
+## Contributing
+
+We welcome contributions! Here's how to get started:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+Please read our [Contributing Guidelines](./CONTRIBUTING.md) for code standards and development workflow.
+
+## Community & Support
+
+- **GitHub Issues**: [Report bugs or request features](https://github.com/antriksha404/NewLink/issues)
+- **Discussions**: [Ask questions and share ideas](https://github.com/antriksha404/NewLink/discussions)
+- **Documentation**: [Read the full docs](./docs)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Acknowledgments
+
+Built with modern tools:
+- [NestJS](https://nestjs.com/) - Progressive Node.js framework
+- [Lerna](https://lerna.js.org/) - Monorepo management
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+
+---
+
+**Built for developers who want to focus on what matters: building great products.**
+
+*Stop reinventing. Start shipping.*
+```
