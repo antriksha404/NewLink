@@ -5,6 +5,8 @@ import { UserController } from '../controllers/user.controller';
 import { UserRepository } from '../repositories/user.repository';
 import { UserService } from '../services/user.service';
 import { JwtStrategy } from '../strategies/jwt.strategy';
+import { MongooseModule } from '@nestjs/mongoose';
+import { User, UserSchema } from '../schemas/user.schema';
 
 @Module({
   imports: [
@@ -13,6 +15,7 @@ import { JwtStrategy } from '../strategies/jwt.strategy';
       secret: process.env.JWT_SECRET || 'your-secret-key',
       signOptions: { expiresIn: '1d' },
     }),
+    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
   ],
   controllers: [UserController],
   providers: [UserService, UserRepository, JwtStrategy],
