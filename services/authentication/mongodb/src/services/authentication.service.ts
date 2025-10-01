@@ -192,7 +192,7 @@ export class AuthenticationService {
 
       const refreshToken = this.jwtService.sign(jwtPayload, {
         privateKey: this.configService.get<string>('JWT_PRIVATE_KEY'),
-        expiresIn: this.configService.get<string>('JWT_REFRESH_EXPIRATION'),
+        expiresIn: this.configService.get<string>('JWT_REFRESH_EXPIRATION', '7d'),
       });
 
       return {
