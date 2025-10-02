@@ -1,27 +1,22 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "declaration": true,
+    "declaration": false,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
-    "lib": ["ES2021"],
-    "outDir": "./dist",
-    "baseUrl": "./src",
+    "target": "es2017",
     "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "hedera/*": ["src/hedera/*"],
+      "blockchain.type": ["./src/types/blockchain.type.ts"],
+      "dto": ["src/dto/index.ts"]
+    },
     "incremental": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+    "strictNullChecks": false
+  }
 }
