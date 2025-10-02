@@ -270,13 +270,6 @@ async function main() {
 		await installDependencies();
 
 		console.log(chalk.bold.green('\n🎉 Project setup complete!\n'));
-		console.log(chalk.cyan('To get started:'));
-		console.log(chalk.white(`  cd ${appName}`));
-		console.log(chalk.white(`  npm run lerna run dev\n`));
-		console.log(chalk.cyan('Useful Lerna commands:'));
-		console.log(chalk.white('  npm run lerna run <cmd>  ') + chalk.gray('- Run command in all packages'));
-		console.log(chalk.white('  npm run lerna run build  ') + chalk.gray('- Build all packages'));
-		console.log(chalk.white('  npm run lerna clean      ') + chalk.gray('- Remove node_modules from all packages\n'));
 	} catch (error) {
 		console.error(chalk.bold.red('\n✗ Error:'), error.message);
 		process.exit(1);

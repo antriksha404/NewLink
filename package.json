@@ -1,12 +1,22 @@
 {
-	"name": "@newput-newlink/monorepo",
-	"version": "1.0.7",
-	"private": false,
-	"workspaces": [
-		"cli",
-		"common/*",
-		"services/*",
-		"sandbox/*"
+	"name": "ccube-newlink",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "NewLink a ccube product",
+	"homepage": "https://github.com/antriksha404/NewLink#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/antriksha404/NewLink.git"
+	},
+	"license": "ISC",
+	"author": "",
+	"main": "index.js",
+	"bin": {
+		"newlink": "index.js"
+	},
+	"files": [
+		"index.js",
+		"services/**/*"
 	],
 	"scripts": {
 		"build": "lerna run build",
