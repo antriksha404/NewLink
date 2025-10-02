@@ -45,22 +45,18 @@ Whether you're a startup racing to launch an MVP or an enterprise standardizing 
 ### Installation
 
 1. **Clone the repository**
-
    ```bash
    git clone https://github.com/antriksha404/NewLink.git
    cd NewLink
    ```
 
 2. **Use the correct Node version**
-
    ```bash
    nvm use
    ```
-
    This automatically loads the Node version specified in `.nvmrc`
 
 3. **Install dependencies**
-
    ```bash
    npm install
    ```
@@ -75,41 +71,38 @@ Whether you're a startup racing to launch an MVP or an enterprise standardizing 
 Once NewLink is running, you can scaffold a new microservice using the CLI:
 
 1. **Navigate to your project directory**
-
    ```bash
    cd /path/to/your/projects
    ```
 
 2. **Run the NewLink CLI**
-
    ```bash
    ccube-newlink
    ```
 
 3. **Answer the interactive prompts**
-
+   
    The CLI will guide you through project setup:
-
+   
    ```
    ? Project name: my-awesome-service
    ? Description: A microservice for handling user operations
    ? Select services to include: (Use arrow keys and space to select)
-
+   
    ◯ Authentication - User auth, JWT, and RBAC
    ◯ Blockchain - Wallet integration and Web3 features
    ◯ Notification - Email, SMS, and messaging
    ```
-
+   
    **Available Services:**
-
+   
    - **Authentication** - Complete auth system with JWT, user management, and role-based access control
    - **Blockchain** - Web3 integration, wallet verification, and transaction logging
    - **Notification** - Multi-channel notification system (email, SMS, push)
 
 4. **Start building!**
-
+   
    Your new microservice is ready with:
-
    - Pre-configured project structure
    - Selected service modules integrated
    - Development and production configs
@@ -205,4 +198,3 @@ Built with modern tools:
 **Built for developers who want to focus on what matters: building great products.**
 
 *Stop reinventing. Start shipping.*
-```

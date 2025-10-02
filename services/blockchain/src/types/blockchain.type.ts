@@ -1,4 +1,4 @@
-import { TokenSupplyType, TokenType } from '@hashgraph/sdk';
+import { TokenSupplyType, TokenType } from "@hashgraph/sdk";
 interface ProviderDtoType {
   provide: string;
   useValue: any;
